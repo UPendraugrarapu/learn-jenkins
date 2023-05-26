@@ -15,3 +15,5 @@ node('workstation') {
               }
   }
 }
+
+##catch(e) stands for exception
