@@ -15,11 +15,13 @@ node('workstation') {
                   sh 'env >/tmp/env'
                     }
       }
-
-    stage ("two"){
-     input(id: 'deploy_approval', message: 'Approve deployment?', ok: 'Deploy', reject: 'Cancel')
-     echo "two"
+     if (PERSON == "UPENDRA") {
+      stage ("two"){
+           input(id: 'deploy_approval', message: 'Approve deployment?', ok: 'Deploy', reject: 'Cancel')
+           echo "two"
+           }
      }
+
   } catch(e) {
          stage('Declarative : post actions') {
             echo 'this will be run if any failed'
